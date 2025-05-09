@@ -1,6 +1,7 @@
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Post
+from .serializer import PostSerializer
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the blog index yoo.")
-
-# Create your views here.
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all().order_by('-created_at')
+    serializer_class = PostSerializer
