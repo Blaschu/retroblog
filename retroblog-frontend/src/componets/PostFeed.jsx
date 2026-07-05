@@ -1,7 +1,8 @@
-import { use, useEffect } from "react";
+import { use, useEffect, useState } from "react";
 
 function PostFeed() {
-    cosnt [posts, setPosts] = useState([]);
+
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         fetch("http://127.0.0.1:8000/api/posts/")

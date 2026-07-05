@@ -9,14 +9,19 @@ function CreatePost() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://http://127.0.0.1:8000/api/posts/', {
+        fetch('http://127.0.0.1:8000/api/posts/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ title, content }),
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`)
+    }
+    return response.json()
+})
             .then(() => {
                 navigate('/')
             })
