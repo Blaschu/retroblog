@@ -1,0 +1,85 @@
+/* ===== Post Feed - colores exactos de main_window.svg ===== */
+
+.post-feed {
+    background-color: #BC8BA5; /* mauve exacto del main_window.svg */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 25px;
+    font-family: "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* el scroll pasa a post-scroll-area, no al panel entero */
+}
+
+.post-feed-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    text-shadow: 2px 2px 0 #fff;
+    margin: 0 0 20px 0;
+    flex-shrink: 0;
+}
+
+/* Esta es la zona que scrollea. El panel afuera queda fijo. */
+.post-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.post-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+.post-scroll-area::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.post-feed-status {
+    text-align: center;
+    color: #333;
+    font-style: italic;
+}
+
+.post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-card {
+    background-color: #D9D9D9; /* gris exacto de las tarjetas del main_window.svg */
+    border-radius: 6px;
+    padding: 20px;
+    min-height: 90px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.post-card-title {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #1a1a1a;
+}
+
+.post-card-content {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.post-feed-sentinel {
+    text-align: center;
+    padding: 16px 0;
+    color: #333;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}

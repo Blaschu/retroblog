@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import './CreatePost.css'
 
 function CreatePost() {
     const [title, setTitle] = useState('')
@@ -18,40 +18,55 @@ function CreatePost() {
         })
             .then((response) => {
                 if (!response.ok) {
-                throw new Error(`HTTP error ${response.status}`)
-    }
-    return response.json()
-})
+                    throw new Error(`HTTP error ${response.status}`)
+                }
+                return response.json()
+            })
             .then(() => {
                 navigate('/')
             })
-            .catch((error) => console.error('Error creating post:', error))}
+            .catch((error) => console.error('Error creating post:', error))
+    }
 
-    return(
+    return (
         <form onSubmit={handleSubmit} className="create-post-form">
-            <h1>Create a New Post</h1>
-            <div className="form-group">
-                <label htmlFor="title">Title:</label>
+            <h1 className="create-post-title">¡New Post!</h1>
+
+            <div className="create-post-body">
+                {/* Campo título, oculto visualmente como input pero funcional */}
                 <input
                     type="text"
                     id="title"
+                    className="create-post-title-input"
+                    placeholder="Title..."
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
                 />
-            </div>
-            <div className="form-group">
-                <label htmlFor="content">Content:</label>
                 <textarea
                     id="content"
+                    className="create-post-textarea"
+                    placeholder="Start writing your thoughts..."
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     required
                 ></textarea>
             </div>
-            <button type="submit">Create Post</button>
+
+            <div className="create-post-actions">
+                <button
+                    type="button"
+                    className="btn-logout"
+                    onClick={() => navigate('/')}
+                >
+                    Logout
+                </button>
+                <button type="submit" className="btn-post">
+                    Post
+                </button>
+            </div>
         </form>
     )
-}; 
+}
 
 export default CreatePost

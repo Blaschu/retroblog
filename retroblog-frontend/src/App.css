@@ -1,42 +1,100 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ===== App layout - Retro Blog ===== */
+
+body {
+    margin: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container {
+    min-height: 100vh;
+    background-color: #E0D3CD; /* fondo crema general */
+    font-family: "Courier New", monospace;
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    text-shadow: 3px 3px 0 #fff;
+    margin: 0 0 30px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-.card {
-  padding: 2em;
+/* ----- Menu lateral (verde) ----- */
+
+.app-menu {
+    background-color: #8EBDB2; /* verde/menta exacto del Menu.svg */
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 230px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
 }
 
-.read-the-docs {
-  color: #888;
+.app-menu-label {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: 0.75rem;
+    color: #333;
+    opacity: 0.7;
+}
+
+.app-menu-title {
+    margin: 10px 0 10px 0;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    text-shadow: 2px 2px 0 #fff;
+}
+
+.menu-btn {
+    background-color: #5E3E6C; /* purpura exacto del Buttton1.svg */
+    color: #fff;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 10px; /* radio real: 10 sobre 60 de alto en el SVG del boton */
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    text-align: left;
+    box-sizing: border-box;
+    transition: filter 0.15s ease;
+}
+
+.menu-btn:hover {
+    filter: brightness(1.15);
+}
+
+.menu-btn-active {
+    background-color: #8EBDB2; /* el boton activo usa el verde del menu, como en el Home_Loged.svg */
+    color: #1a1a1a;
+}
+
+/* ----- Panel principal (contenido de la ruta activa) ----- */
+
+.app-main {
+    flex: 1;
+    min-width: 0;
+    height: calc(100vh - 140px); /* altura fija: habilita el scroll interno del feed */
+    display: flex;
+    flex-direction: column;
 }

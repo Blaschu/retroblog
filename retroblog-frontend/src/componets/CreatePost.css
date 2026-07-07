@@ -1,0 +1,91 @@
+/* ===== Create Post - estilo Retro Blog (Figma) ===== */
+
+.create-post-form {
+    background-color: #BC8BA5; /* mauve exacto del main_window.svg */
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px 25px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Courier New", monospace;
+}
+
+.create-post-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    text-shadow: 2px 2px 0 #fff;
+    margin: 0;
+}
+
+.create-post-body {
+    background-color: #D9D9D9; /* gris del textarea grande */
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.create-post-title-input {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    padding: 6px 4px;
+    border-bottom: 2px solid #999;
+}
+
+.create-post-title-input:focus,
+.create-post-textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.create-post-textarea {
+    border: none;
+    background: transparent;
+    resize: vertical;
+    min-height: 200px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    padding: 4px;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-logout,
+.btn-post {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 30px;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.btn-logout {
+    background-color: #5E3E6C; /* purpura exacto del Buttton1.svg */
+}
+
+.btn-post {
+    background-color: #8EBDB2; /* verde exacto del Menu.svg */
+}
+
+.btn-logout:hover,
+.btn-post:hover {
+    filter: brightness(1.1);
+}
